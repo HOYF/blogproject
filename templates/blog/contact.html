@@ -1,0 +1,89 @@
+{% extends 'basecssjs.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+{% block body1 %}
+		<div class="container">
+			<header id="site-header">
+				<div class="row">
+					<div class="col-md-4 col-sm-5 col-xs-8">
+						<div class="logo">
+							<h1><a href="{% url 'blog:index' %}">饕餮鱼</a></h1>
+						</div>
+					</div><!-- col-md-4 -->
+					<div class="col-md-8 col-sm-7 col-xs-4">
+						<nav class="main-nav" role="navigation">
+							<div class="navbar-header">
+  								<button type="button" id="trigger-overlay" class="navbar-toggle">
+    								<span class="ion-navicon"></span>
+  								</button>
+							</div>
+
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  								<ul class="nav navbar-nav navbar-right">
+    								<li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
+    								<li class="cl-effect-11"><a href="{% url 'blog:production' %}" data-hover="作品展">作品展</a></li>
+    								<li class="cl-effect-11"><a href="{% url 'blog:about' %}" data-hover="关于">关于</a></li>
+    								<li class="cl-effect-11"><a href="{% url 'blog:contact' %}" data-hover="联系">联系</a></li>
+  								</ul>
+							</div><!-- /.navbar-collapse -->
+						</nav>
+					</div><!-- col-md-8 -->
+				</div>
+			</header>
+		</div>
+
+		<div class="content-body">
+			<div class="container">
+				<div class="row">
+					<main class="col-md-12">
+						<h1 class="page-title">Contact</h1>
+						<article class="post">
+							<div class="entry-content clearfix">
+                                <form action="{% url 'letter:send' %}" method="post" class="contact-form">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            {{ form.name }}
+                                            {{ form.name.errors }}
+                                            {{ form.email }}
+                                            {{ form.email.errors }}
+                                            {{ form.subject }}
+                                            {{ form.subject.errors }}
+                                            {{ form.message }}
+                                            {{ form.message.errors }}
+                                            <button class="btn-send btn-5 btn-5b ion-ios-paperplane"><span>Send</span></button>
+                                        </div>
+                                    </div>
+                                </form>
+							</div>
+						</article>
+					</main>
+				</div>
+			</div>
+		</div>
+		<footer id="site-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="copyright">&copy 饕餮鱼 - 因为互联网终将拉平整个世界</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Mobile Menu -->
+		<div class="overlay overlay-hugeinc">
+			<button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+			<nav>
+				<ul>
+					<li><a href="{% url 'blog:index' %}">首页</a></li>
+					<li><a href="{% url 'blog:production' %}">作品展</a></li>
+					<li><a href="{% url 'blog:about' %}">关于</a></li>
+					<li><a href="{% url 'blog:contact' %}">联系</a></li>
+				</ul>
+			</nav>
+		</div>
+{% endblock body1 %}
+</html>
+

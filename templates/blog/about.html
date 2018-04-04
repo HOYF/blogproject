@@ -1,0 +1,104 @@
+{% extends 'basecssjs.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+{% block body1 %}
+		<div class="container">
+			<header id="site-header">
+				<div class="row">
+					<div class="col-md-4 col-sm-5 col-xs-8">
+						<div class="logo">
+							<h1><a href="{% url 'blog:index' %}">饕餮鱼</a></h1>
+						</div>
+					</div><!-- col-md-4 -->
+					<div class="col-md-8 col-sm-7 col-xs-4">
+						<nav class="main-nav" role="navigation">
+							<div class="navbar-header">
+  								<button type="button" id="trigger-overlay" class="navbar-toggle">
+    								<span class="ion-navicon"></span>
+  								</button>
+							</div>
+
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  								<ul class="nav navbar-nav navbar-right">
+    								<li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
+    								<li class="cl-effect-11"><a href="{% url 'blog:production' %}" data-hover="作品展">作品展</a></li>
+    								<li class="cl-effect-11"><a href="{% url 'blog:about' %}" data-hover="关于">关于</a></li>
+    								<li class="cl-effect-11"><a href="{% url 'blog:contact' %}" data-hover="联系">联系</a></li>
+  								</ul>
+							</div><!-- /.navbar-collapse -->
+						</nav>
+						<div id="header-search-box">
+							<a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
+							<div id="search-form" class="search-form">
+								<form role="search" method="get" id="searchform" action="{% url 'haystack_search' %}">
+									<input type="search" name="q" placeholder="Search" required>
+									<button type="submit"><span class="ion-ios-search-strong"></span></button>
+								</form>
+							</div>
+						</div>
+					</div><!-- col-md-8 -->
+				</div>
+			</header>
+		</div>
+
+		<div class="content-body">
+			<div class="container">
+				<div class="row">
+					<main class="col-md-12">
+						<h1 class="page-title">About Me</h1>
+						<article class="post">
+							<div class="entry-content clearfix">
+								<figure class="img-responsive-center">
+									<img class="img-responsive" src="../static/blog/img/bg.jpg" alt="Developer Image">
+								</figure>
+								<p>如果一个人，一生闷头劳作、结婚生子，也可以获得世俗的荣耀和快乐。</p>
+								<p>但是纵观人类社会，那些高级的灵魂，无一不是摆脱了柴米油盐，进入一种更高的思考领域，开始探索更加重要的问题：</p>
+                                <p>你看到的世界是真实的吗？</p>
+                                <p>人真的有灵魂吗？</p>
+                                <p>死亡究竟意味着一切的终结吗？</p>
+                                <p>人生的意义要到哪里去寻找？</p>
+                                <p>人有没有真正的自由？</p>
+                                <p>也许，我们穷其一生也无法找到答案</p>
+								<div class="height-40px"></div>
+								<h2 class="title text-center">Social</h2>
+								<ul class="social">
+									<li class="facebook"><a href="#site-footer" disabled="disabled"><span class="ion-social-facebook"></span></a></li>
+									<li class="twitter"><a href="#site-footer"><span class="ion-social-twitter"></span></a></li>
+									<li class="google-plus"><a href="#site-footer"><span class="ion-social-googleplus"></span></a></li>
+									<li class="tumblr"><a href="#site-footer"><span class="ion-social-tumblr"></span></a></li>
+								</ul>
+							</div>
+						</article>
+					</main>
+				</div>
+			</div>
+		</div>
+		<footer id="site-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="copyright">&copy 饕餮鱼 - 因为互联网终将拉平整个世界</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Mobile Menu -->
+		<div class="overlay overlay-hugeinc">
+			<button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+			<nav>
+				<ul>
+					<li><a href="{% url 'blog:index' %}">首页</a></li>
+					<li><a href="{% url 'blog:production' %}">作品展</a></li>
+					<li><a href="{% url 'blog:about' %}">关于</a></li>
+					<li><a href="{% url 'blog:contact' %}">联系</a></li>
+				</ul>
+			</nav>
+		</div>
+
+{#		<script src="js/script.js"></script>#}
+		<script src="{% static 'blog/js/script.js' %}"></script>
+
+	{% endblock body1 %}
+</html>
