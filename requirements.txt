@@ -27,7 +27,7 @@ Markdown==2.6.11
 numpy==1.14.2
 paramiko==2.4.1
 parsel==1.4.0
-Pillow==5.0.0
+Pillow==9.0.1
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pycparser==2.18
