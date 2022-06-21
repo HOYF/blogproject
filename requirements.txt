@@ -24,7 +24,7 @@ itchat==1.2.32
 jieba==0.39
 lxml==4.1.1
 Markdown==2.6.11
-numpy==1.14.2
+numpy==1.22.0
 paramiko==2.4.1
 parsel==1.4.0
 Pillow==5.0.0
